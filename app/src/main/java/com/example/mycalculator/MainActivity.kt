@@ -253,7 +253,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         subtract.setOnClickListener {
-            if(lastDigitNumeric)
+            if(lastDigitNumeric && tvInput.text !="0")
             {
                 onScreen.append("-")
                 tvInput.text = onScreen
@@ -262,6 +262,14 @@ class MainActivity : AppCompatActivity() {
                 zeroAfterOperator = false
                 lastDot = false
             }
+            else if(tvInput.text == "0"){
+                onScreen.clear()
+                onScreen.append("-")
+                tvInput.text = onScreen
+                lastDigitNumeric = false
+                lastOperator= true
+            }
+
 
         }
         multiply.setOnClickListener {
@@ -302,6 +310,15 @@ class MainActivity : AppCompatActivity() {
                     onScreen.clear()
                     onScreen.append(tvInput.text.toString())
                 }
+                if(tvInput.text.contains(".")){
+                    lastDot= true
+                }
+                else {
+                    lastDot = false
+                    lastDigitNumeric = true
+                }
+
+
             }
             catch (e:Exception){
                 Toast.makeText(this , "Are you trying something fishy? (¬_¬)" , Toast.LENGTH_SHORT).show()
@@ -309,6 +326,8 @@ class MainActivity : AppCompatActivity() {
 
 
         }
+
+        // this button is not properly implemented ..and well its the modulus operator just like in cp... not percentage .
         percent.setOnClickListener {
             if(lastDigitNumeric && !lastDot && !lastOperator){
                 onScreen.append("%")

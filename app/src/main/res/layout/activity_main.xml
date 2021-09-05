@@ -8,16 +8,26 @@
     android:background="@color/white"
     tools:context=".MainActivity">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvInput"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="40dp"
-        android:text="TextView"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="44dp"
+        android:gravity="bottom|end"
+        android:textAlignment="gravity"
+        android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        android:padding="10dp"
+        android:textColor="@color/black"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -39,7 +49,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/CBtn"
+                android:id="@+id/ACBtn"
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -52,10 +62,11 @@
                 android:layout_weight="1"
                 android:background="#33e0ffff"
                 android:fontFamily="@font/montserrat"
-                android:text="C"
+                android:text="@string/c"
                 android:textColor="#00AEC5"
                 android:textSize="26sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/percentBtn"
@@ -71,10 +82,11 @@
                 android:layout_weight="1"
                 android:background="#33e0ffff"
                 android:fontFamily="@font/armata"
-                android:text="%"
+                android:text="@string/percent"
                 android:textColor="#00AEC5"
                 android:textSize="26sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/backBtn"
@@ -90,10 +102,11 @@
                 android:layout_weight="1"
                 android:background="#33e0ffff"
                 android:fontFamily="@font/montserrat"
-                android:text="⌫"
+                android:text="@string/back"
                 android:textColor="#00AEC5"
                 android:textSize="26sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/divideBtn"
@@ -109,10 +122,11 @@
                 android:layout_weight="1"
                 android:background="#33e0ffff"
                 android:fontFamily="@font/montserrat"
-                android:text="÷"
+                android:text="@string/divide"
                 android:textColor="#00AEC5"
                 android:textSize="30sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
         </LinearLayout>
 
         <LinearLayout
@@ -137,7 +151,7 @@
                 android:layout_weight="1"
                 android:background="#33e0ffff"
                 android:fontFamily="@font/montserrat"
-                android:text="7"
+                android:text="@string/_7"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
 
@@ -155,7 +169,7 @@
                 android:layout_weight="1"
                 android:background="#33e0ffff"
                 android:fontFamily="@font/montserrat"
-                android:text="8"
+                android:text="@string/_8"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
 
@@ -173,7 +187,7 @@
                 android:layout_weight="1"
                 android:background="#33e0ffff"
                 android:fontFamily="@font/montserrat"
-                android:text="9"
+                android:text="@string/_9"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
 
@@ -191,11 +205,12 @@
                 android:layout_weight="1"
                 android:background="#33e0ffff"
                 android:fontFamily="@font/montserrat"
-                android:text="x"
+                android:text="@string/x"
                 android:textAllCaps="false"
                 android:textColor="#00AEC5"
                 android:textSize="26sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
         </LinearLayout>
 
         <LinearLayout
@@ -220,7 +235,7 @@
                 android:layout_weight="1"
                 android:background="#33e0ffff"
                 android:fontFamily="@font/montserrat"
-                android:text="4"
+                android:text="@string/_4"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
 
@@ -238,7 +253,7 @@
                 android:layout_weight="1"
                 android:background="#33e0ffff"
                 android:fontFamily="@font/montserrat"
-                android:text="5"
+                android:text="@string/_5"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
 
@@ -256,7 +271,7 @@
                 android:layout_weight="1"
                 android:background="#33e0ffff"
                 android:fontFamily="@font/montserrat"
-                android:text="6"
+                android:text="@string/_6"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
 
@@ -274,10 +289,11 @@
                 android:layout_weight="1"
                 android:background="#33e0ffff"
                 android:fontFamily="@font/montserrat"
-                android:text="-"
+                android:text="@string/subtract"
                 android:textColor="#00AEC5"
                 android:textSize="30sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
         </LinearLayout>
 
         <LinearLayout
@@ -302,7 +318,7 @@
                 android:layout_weight="1"
                 android:background="#33e0ffff"
                 android:fontFamily="@font/montserrat"
-                android:text="1"
+                android:text="@string/_1"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
 
@@ -320,7 +336,7 @@
                 android:layout_weight="1"
                 android:background="#33e0ffff"
                 android:fontFamily="@font/montserrat"
-                android:text="2"
+                android:text="@string/_2"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
 
@@ -338,7 +354,7 @@
                 android:layout_weight="1"
                 android:background="#33e0ffff"
                 android:fontFamily="@font/montserrat"
-                android:text="3"
+                android:text="@string/_3"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
 
@@ -356,10 +372,11 @@
                 android:layout_weight="1"
                 android:background="#33e0ffff"
                 android:fontFamily="@font/montserrat"
-                android:text="+"
+                android:text="@string/add"
                 android:textColor="#00AEC5"
                 android:textSize="26sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
         </LinearLayout>
 
         <LinearLayout
@@ -384,7 +401,7 @@
                 android:layout_weight="1"
                 android:background="#33e0ffff"
                 android:fontFamily="@font/montserrat"
-                android:text="00"
+                android:text="@string/_00"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
 
@@ -402,7 +419,7 @@
                 android:layout_weight="1"
                 android:background="#33e0ffff"
                 android:fontFamily="@font/montserrat"
-                android:text="0"
+                android:text="@string/_0"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
 
@@ -420,7 +437,7 @@
                 android:layout_weight="1"
                 android:background="#33e0ffff"
                 android:fontFamily="@font/montserrat"
-                android:text="."
+                android:text="@string/decimal"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
 
@@ -438,10 +455,11 @@
                 android:layout_weight="1"
                 android:background="#33e0ffff"
                 android:fontFamily="@font/montserrat"
-                android:text="="
+                android:text="@string/equal"
                 android:textColor="#00AEC5"
                 android:textSize="26sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
         </LinearLayout>
     </LinearLayout>
 
